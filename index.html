@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lou Carpintaria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="logo">
+        <img src="imagens/lou carpintaria.png" alt="Logo">
+    </div>
+
+    <h1 class="h1">Lou Carpintaria</h1>
+
+    <main>
+
+        <!-- =========================
+             CATÁLOGO DE PRODUTOS
+        ========================= -->
+
+        <div class="catalogo">
+
+            <!-- CARD DO PRODUTO -->
+            <div class="card" onclick="abrirModal('escada')">
+                <img src="imagens/escada_tauri1.png" alt="Escada Tauari">
+
+                <div class="card-conteudo">
+                    <h2>Escada de Tauari</h2>
+                    <p>Escada de canto feita com madeira de Tauari.</p>
+                </div>
+            </div>
+
+            <!-- CARD DO PRODUTO -->
+            <div class="card" onclick="abrirModal('deck')">
+                <img src="imagens/deck1.png" alt="Deck de Madeira">
+
+                <div class="card-conteudo">
+                    <h2>Deck de Madeira</h2>
+                    <p>Deck de madeira para áreas externas, trazendo beleza e conforto ao ambiente.</p>
+                </div>
+            </div>
+
+            <!-- CARD DO PRODUTO -->
+            <div class="card" onclick="abrirModal('piso')">
+                <img src="imagens/piso1.png" alt="Piso de Madeira">
+
+                <div class="card-conteudo">
+                    <h2>Piso de Madeira</h2>
+                    <p>Piso de madeira que une durabilidade e acabamento sofisticado para o ambiente.</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             MODAL DO PRODUTO
+        ========================= -->
+
+        <div class="modal" id="modal">
+
+            <div class="modal-conteudo">
+
+                <!-- BOTÃO FECHAR -->
+                <button class="fechar" onclick="fecharModal()">&times;</button>
+
+                <!-- FOTO PRINCIPAL -->
+                <div class="foto-principal">
+                    <img id="imagemPrincipal" src="imagens/escada_tauri1.png" alt="Escada">
+                </div>
+
+                <!-- MINIATURAS -->
+                <div class="miniaturas">
+
+                    <img src="imagens/escada_tauri1.png" alt="Escada Tauari - Foto 1" onclick="trocarImagem(this)">
+                    <img src="imagens/escada_tauri2.png" alt="Escada Tauari - Foto 2" onclick="trocarImagem(this)">
+                    <img src="imagens/escada_tauri3.png" alt="Escada Tauari - Foto 3" onclick="trocarImagem(this)">
+
+                </div>
+
+                <!-- TÍTULO E DESCRIÇÃO -->
+                <div class="modal-info">
+                    <h2 id="modalTitulo"></h2>
+                    <p id="modalDescricao"></p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

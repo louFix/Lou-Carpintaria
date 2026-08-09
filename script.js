@@ -128,6 +128,27 @@ function fecharModal() {
 
 
 // =========================
+// MODAL DA EQUIPE
+// =========================
+
+const modalEquipe = document.getElementById("modalEquipe");
+
+function abrirModalEquipe() {
+
+    modalEquipe.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+}
+
+function fecharModalEquipe() {
+
+    modalEquipe.style.display = "none";
+
+    document.body.style.overflow = "auto";
+}
+
+
+// =========================
 // TROCAR IMAGEM
 // =========================
 
@@ -148,6 +169,12 @@ window.onclick = function (event) {
     if (event.target === modal) {
 
         fecharModal();
+
+    }
+
+    if (event.target === modalEquipe) {
+
+        fecharModalEquipe();
 
     }
 

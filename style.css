@@ -209,12 +209,43 @@ body{
 ========================= */
 
 .card {
-    background: rgba(255, 255, 255, 0.9);
+    /* Textura de madeira feita só com CSS:
+       1ª camada = linhas finas do veio da madeira
+       2ª camada = variação de tom simulando ripas/tábuas */
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.08) 0px,
+            rgba(0, 0, 0, 0.08) 1px,
+            transparent 1px,
+            transparent 5px
+        ),
+        repeating-linear-gradient(
+            100deg,
+            rgba(255, 255, 255, 0.05) 0px,
+            transparent 3px,
+            rgba(0, 0, 0, 0.04) 6px,
+            transparent 9px
+        ),
+        linear-gradient(
+            100deg,
+            #7a4a25,
+            #9c6b3d 12%,
+            #7a4a25 22%,
+            #b9834f 34%,
+            #8a5730 46%,
+            #a9713f 58%,
+            #7a4a25 70%,
+            #b9834f 82%,
+            #8a5730 100%
+        );
+
+    padding: 8px;
 
     border-radius: 20px;
     overflow: hidden;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 12px rgba(0, 0, 0, 0.25);
 
     transition: 0.3s;
 }
@@ -237,6 +268,8 @@ body{
 
     object-fit: cover;
     display: block;
+
+    border-radius: 13px 13px 0 0;
 }
 
 
@@ -245,7 +278,11 @@ body{
 ========================= */
 
 .card-conteudo {
+    background: #fff5e7;
+
     padding: 20px;
+
+    border-radius: 0 0 13px 13px;
 }
 
 .card-conteudo h2 {
@@ -343,13 +380,48 @@ body{
 
     overflow-y: auto;
 
-    background: #fff;
+    /* Mesma textura de madeira usada nos cards do catálogo e da equipe */
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.08) 0px,
+            rgba(0, 0, 0, 0.08) 1px,
+            transparent 1px,
+            transparent 5px
+        ),
+        repeating-linear-gradient(
+            100deg,
+            rgba(255, 255, 255, 0.05) 0px,
+            transparent 3px,
+            rgba(0, 0, 0, 0.04) 6px,
+            transparent 9px
+        ),
+        linear-gradient(
+            100deg,
+            #7a4a25,
+            #9c6b3d 12%,
+            #7a4a25 22%,
+            #b9834f 34%,
+            #8a5730 46%,
+            #a9713f 58%,
+            #7a4a25 70%,
+            #b9834f 82%,
+            #8a5730 100%
+        );
 
     border-radius: 20px;
 
-    padding: 25px;
+    padding: 10px;
 
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4), inset 0 0 14px rgba(0, 0, 0, 0.25);
+}
+
+.modal-corpo {
+    background: #fff;
+
+    border-radius: 14px;
+
+    padding: 20px;
 }
 
 
@@ -508,13 +580,40 @@ body{
 .integrante {
     flex: 1 1 180px;
 
-    background: #fff5e7;
+    /* Mesma textura de madeira usada nos cards do catálogo */
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.08) 0px,
+            rgba(0, 0, 0, 0.08) 1px,
+            transparent 1px,
+            transparent 5px
+        ),
+        repeating-linear-gradient(
+            100deg,
+            rgba(255, 255, 255, 0.05) 0px,
+            transparent 3px,
+            rgba(0, 0, 0, 0.04) 6px,
+            transparent 9px
+        ),
+        linear-gradient(
+            100deg,
+            #7a4a25,
+            #9c6b3d 12%,
+            #7a4a25 22%,
+            #b9834f 34%,
+            #8a5730 46%,
+            #a9713f 58%,
+            #7a4a25 70%,
+            #b9834f 82%,
+            #8a5730 100%
+        );
 
     border-radius: 15px;
 
-    padding: 20px;
+    padding: 8px;
 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.25);
 
     transition: 0.3s;
 }
@@ -523,18 +622,34 @@ body{
     transform: translateY(-4px);
 }
 
+.integrante-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    background: #fff5e7;
+
+    border-radius: 9px;
+
+    padding: 18px 14px;
+}
+
 .integrante h3 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
 
     color: #333;
 
-    margin-bottom: 8px;
+    margin-bottom: 2px;
 }
 
-.integrante a {
-    display: inline-block;
+/* Botão do Instagram */
+.link-instagram {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
 
     color: #fff;
@@ -542,16 +657,50 @@ body{
 
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 
-    padding: 6px 14px;
+    padding: 7px 16px;
 
     border-radius: 20px;
+
+    width: 100%;
+    max-width: 170px;
+    justify-content: center;
 
     transition: 0.3s;
 }
 
-.integrante a:hover {
+.link-instagram:hover {
     filter: brightness(1.1);
     transform: scale(1.05);
+}
+
+/* Botão de contato (telefone) - visual próprio, não herda o gradiente do Instagram */
+.link-contato {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    color: #3b2a1a;
+    text-decoration: none;
+
+    background: #fff;
+    border: 2px solid #3b2a1a;
+
+    padding: 6px 16px;
+
+    border-radius: 20px;
+
+    width: 100%;
+    max-width: 170px;
+
+    transition: 0.3s;
+}
+
+.link-contato:hover {
+    background: #3b2a1a;
+    color: #fff;
 }
 
 @media (max-width: 600px) {

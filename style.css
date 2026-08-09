@@ -7,7 +7,7 @@
     box-sizing:border-box;
     font-family:Arial, sans-serif;
 }
-
+ 
 /* =========================
    BODY
 ========================= */
@@ -18,7 +18,7 @@ body{
     align-items:center;
     padding:40px;
     overflow-x:hidden;
-
+ 
     background:linear-gradient(
         135deg,
         #ffc65d,
@@ -26,33 +26,33 @@ body{
         #fff5e7,
         #ffa33a
     );
-
+ 
     background-size:400% 400%;
     animation:fundo 15s ease infinite;
 }
-
+ 
 @keyframes fundo{
     0%{background-position:0% 50%;}
     50%{background-position:100% 50%;}
     100%{background-position:0% 50%;}
 }
-
+ 
 /* =========================
    TÍTULO
 ========================= */
-
+ 
 .h1 {
     position: absolute;
     top: 30px;
     right: 30px;
-
+ 
     font-family: "Philosopher", sans-serif;
     font-size: 2.6rem;
     font-weight: 700;
     letter-spacing: 1px;
-
+ 
     text-align: right;
-
+ 
     /* Gradiente aplicado diretamente no texto */
     background: linear-gradient(90deg, #ffee00, #ff8a00, #ffee00);
     background-size: 200% auto;
@@ -60,7 +60,7 @@ body{
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-
+ 
     /* Sombra por trás (funciona mesmo com texto transparente).
        Usamos text-shadow em vez de filter: drop-shadow porque, no Safari/iOS,
        drop-shadow junto com background-clip:text causa um bug visual de
@@ -68,14 +68,14 @@ body{
     text-shadow:
         2px 2px 0 #3b2a1a,
         0 0 20px rgba(0, 0, 0, 0.4);
-
+ 
     /* Entrada suave ao carregar (a animação contínua do gradiente foi
        removida: no Safari/iOS ela causava um bug de repintura que deixava
        um rastro/fantasma do texto durante a animação de background-position) */
     opacity: 0;
     animation: h1Entrada 0.9s ease-out 0.2s forwards;
 }
-
+ 
 @keyframes h1Entrada {
     from {
         opacity: 0;
@@ -86,7 +86,7 @@ body{
         transform: translateY(0);
     }
 }
-
+ 
 /* Alternativa: pulsação leve em vez do gradiente animado.
    Para usar, troque a linha da animation acima por:
    animation: h1Entrada 0.9s ease-out 0.2s forwards, h1Pulso 2.5s ease-in-out infinite 1.1s;
@@ -95,7 +95,7 @@ body{
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.04); }
 }
-
+ 
 @media (max-width: 600px) {
     .h1 {
         top: 45px;
@@ -108,7 +108,7 @@ body{
         letter-spacing: 0.5px;
     }
 }
-
+ 
 /* =========================
    LOGO 
 ========================= */
@@ -116,409 +116,409 @@ body{
     width:100px;
     height:100px;
     object-fit:cover;
-
+ 
     border-radius:50%;
     border:3px solid #ffee00;
-
+ 
     margin-bottom:30px;
-
+ 
     box-shadow:0 10px 30px rgba(0,0,0,.3);
     transition:.4s;
 }
-
+ 
 .logo img:hover{
     transform:scale(1.05);
 }
-
-
-
-
+ 
+ 
+ 
+ 
 /* =========================
    RESPONSIVIDADE - CELULAR
 ========================= */
-
+ 
 @media (max-width: 600px) {
-
+ 
     body {
         padding: 20px;
         align-items: flex-start;
     }
-
+ 
     .logo img {
         width: 180px;
         height: 180px;
         border-width: 6px;
         margin-bottom: 20px;
     }
-
+ 
 }
-
+ 
 /* =========================
    POSIÇÃO DA LOGO
 ========================= */
-
+ 
 .logo {
     position: absolute;
     top: 30px;
     left: 30px;
 }
-
-
+ 
+ 
 /* =========================
    LOGO NO CELULAR
 ========================= */
-
+ 
 @media (max-width: 600px) {
-
+ 
     .logo {
         top: 15px;
         left: 15px;
     }
-
+ 
     .logo img {
         width: 100px;
         height: 100px;
         border-width: 4px;
         margin-bottom: 0;
     }
-
+ 
 }
-
-
-
-
+ 
+ 
+ 
+ 
 /* =========================
    CATÁLOGO
 ========================= */
-
+ 
 .catalogo {
     width: 100%;
     max-width: 1200px;
-
+ 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-
+ 
     margin-top: 180px;
 }
-
-
+ 
+ 
 /* =========================
    CARD
 ========================= */
-
+ 
 .card {
     background: rgba(255, 255, 255, 0.9);
-
+ 
     border-radius: 20px;
     overflow: hidden;
-
+ 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-
+ 
     transition: 0.3s;
 }
-
-
+ 
+ 
 /* Efeito ao passar o mouse */
-
+ 
 .card:hover {
     transform: translateY(-8px);
 }
-
-
+ 
+ 
 /* =========================
    IMAGEM DO PRODUTO
 ========================= */
-
+ 
 .card img {
     width: 100%;
     height: 250px;
-
+ 
     object-fit: cover;
     display: block;
 }
-
-
+ 
+ 
 /* =========================
    CONTEÚDO
 ========================= */
-
+ 
 .card-conteudo {
     padding: 20px;
 }
-
+ 
 .card-conteudo h2 {
     margin-bottom: 10px;
-
+ 
     font-size: 1.4rem;
     color: #333;
 }
-
+ 
 .card-conteudo p {
     margin-bottom: 15px;
-
+ 
     font-size: 1rem;
     line-height: 1.5;
     color: #666;
 }
-
-
+ 
+ 
 /* =========================
    RESPONSIVIDADE
 ========================= */
-
+ 
 @media (max-width: 900px) {
-
+ 
     .catalogo {
         grid-template-columns: repeat(2, 1fr);
     }
-
+ 
 }
-
-
+ 
+ 
 @media (max-width: 600px) {
-
+ 
     .catalogo {
         grid-template-columns: 1fr;
         gap: 20px;
-
+ 
         margin-top: 140px;
         padding: 0 10px;
     }
-
+ 
     .card img {
         height: 220px;
     }
-
+ 
     .card-conteudo {
         padding: 15px;
     }
-
+ 
     .card-conteudo h2 {
         font-size: 1.2rem;
     }
-
+ 
     .card-conteudo p {
         font-size: 0.95rem;
     }
-
+ 
 }
-
-
-
+ 
+ 
+ 
 /* =========================
    MODAL
 ========================= */
-
+ 
 .modal {
     display: none;
-
+ 
     position: fixed;
     z-index: 1000;
-
+ 
     inset: 0;
-
+ 
     justify-content: center;
     align-items: center;
-
+ 
     padding: 20px;
-
+ 
     background: rgba(0, 0, 0, 0.7);
-
+ 
     backdrop-filter: blur(5px);
 }
-
-
+ 
+ 
 /* =========================
    CONTEÚDO DO MODAL
 ========================= */
-
+ 
 .modal-conteudo {
     position: relative;
-
+ 
     width: 100%;
     max-width: 800px;
     max-height: 90vh;
-
+ 
     overflow-y: auto;
-
+ 
     background: #fff;
-
+ 
     border-radius: 20px;
-
+ 
     padding: 25px;
-
+ 
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
 }
-
-
+ 
+ 
 /* =========================
    BOTÃO FECHAR
 ========================= */
-
+ 
 .fechar {
     position: absolute;
-
+ 
     top: 15px;
     right: 20px;
-
+ 
     z-index: 10;
-
+ 
     width: 40px;
     height: 40px;
-
+ 
     border: none;
     border-radius: 50%;
-
+ 
     background: rgba(0, 0, 0, 0.7);
-
+ 
     color: #fff;
-
+ 
     font-size: 28px;
-
+ 
     cursor: pointer;
-
+ 
     transition: 0.3s;
 }
-
+ 
 .fechar:hover {
     background: #fd9541;
-
+ 
     transform: rotate(90deg);
 }
-
-
+ 
+ 
 /* =========================
    FOTO PRINCIPAL
 ========================= */
-
+ 
 .foto-principal {
     width: 100%;
-
+ 
     display: flex;
     justify-content: center;
-
+ 
     margin-bottom: 15px;
 }
-
+ 
 .foto-principal img {
     width: 100%;
     max-height: 450px;
-
+ 
     object-fit: cover;
-
+ 
     border-radius: 15px;
 }
-
-
+ 
+ 
 /* =========================
    MINIATURAS
 ========================= */
-
+ 
 .miniaturas {
     display: flex;
-
+ 
     justify-content: center;
-
+ 
     gap: 10px;
-
+ 
     margin-bottom: 25px;
-
+ 
     flex-wrap: wrap;
 }
-
+ 
 .miniaturas img {
     width: 80px;
     height: 80px;
-
+ 
     object-fit: cover;
-
+ 
     border-radius: 10px;
-
+ 
     cursor: pointer;
-
+ 
     border: 3px solid transparent;
-
+ 
     transition: 0.3s;
 }
-
+ 
 .miniaturas img:hover {
     transform: scale(1.05);
-
+ 
     border-color: #fd9541;
 }
-
-
+ 
+ 
 /* =========================
    INFORMAÇÕES
 ========================= */
-
+ 
 .modal-info {
     text-align: center;
 }
-
+ 
 .modal-info h2 {
     font-size: 2rem;
-
+ 
     margin-bottom: 10px;
-
+ 
     color: #333;
 }
-
+ 
 .modal-info p {
     font-size: 1rem;
-
+ 
     line-height: 1.6;
-
+ 
     color: #666;
-
+ 
     margin-bottom: 15px;
 }
-
+ 
 .modal-info .preco {
     display: block;
-
+ 
     font-size: 1.5rem;
-
+ 
     color: #fd7e14;
-
+ 
     font-weight: bold;
 }
-
-
+ 
+ 
 /* =========================
    MODAL NO CELULAR
 ========================= */
-
+ 
 @media (max-width: 600px) {
-
+ 
     .modal {
         padding: 10px;
     }
-
+ 
     .modal-conteudo {
         max-height: 95vh;
-
+ 
         padding: 15px;
-
+ 
         border-radius: 15px;
     }
-
+ 
     .foto-principal img {
         max-height: 300px;
     }
-
+ 
     .miniaturas img {
         width: 65px;
         height: 65px;
     }
-
+ 
     .modal-info h2 {
         font-size: 1.5rem;
     }
-
+ 
     .modal-info p {
         font-size: 0.9rem;
     }
-
+ 
 }

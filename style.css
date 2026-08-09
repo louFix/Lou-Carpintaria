@@ -69,11 +69,11 @@ body{
         2px 2px 0 #3b2a1a,
         0 0 20px rgba(0, 0, 0, 0.4);
 
-    /* Entrada suave ao carregar + gradiente "andando" continuamente */
+    /* Entrada suave ao carregar (a animação contínua do gradiente foi
+       removida: no Safari/iOS ela causava um bug de repintura que deixava
+       um rastro/fantasma do texto durante a animação de background-position) */
     opacity: 0;
-    animation:
-        h1Entrada 0.9s ease-out 0.2s forwards,
-        h1Gradiente 6s linear infinite 1.1s;
+    animation: h1Entrada 0.9s ease-out 0.2s forwards;
 }
 
 @keyframes h1Entrada {
@@ -84,12 +84,6 @@ body{
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@keyframes h1Gradiente {
-    to {
-        background-position: 200% center;
     }
 }
 
@@ -104,12 +98,14 @@ body{
 
 @media (max-width: 600px) {
     .h1 {
-        top: 175px;
-        left: 15px;
+        top: 45px;
+        left: auto;
         right: 15px;
         width: auto;
-        text-align: center;
-        font-size: 1.8rem;
+        max-width: 60%;
+        text-align: right;
+        font-size: 1.25rem;
+        letter-spacing: 0.5px;
     }
 }
 
@@ -286,7 +282,7 @@ body{
         grid-template-columns: 1fr;
         gap: 20px;
 
-        margin-top: 240px;
+        margin-top: 140px;
         padding: 0 10px;
     }
 

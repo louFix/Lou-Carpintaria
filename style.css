@@ -61,8 +61,13 @@ body{
     -webkit-text-fill-color: transparent;
     color: transparent;
 
-    /* Sombra por trás (funciona mesmo com texto transparente) */
-    filter: drop-shadow(2px 2px 0 #3b2a1a) drop-shadow(0 0 20px rgba(0, 0, 0, 0.4));
+    /* Sombra por trás (funciona mesmo com texto transparente).
+       Usamos text-shadow em vez de filter: drop-shadow porque, no Safari/iOS,
+       drop-shadow junto com background-clip:text causa um bug visual de
+       "texto fantasma" duplicado. */
+    text-shadow:
+        2px 2px 0 #3b2a1a,
+        0 0 20px rgba(0, 0, 0, 0.4);
 
     /* Entrada suave ao carregar + gradiente "andando" continuamente */
     opacity: 0;
@@ -99,12 +104,12 @@ body{
 
 @media (max-width: 600px) {
     .h1 {
-        top: 130px;
+        top: 175px;
+        left: 15px;
         right: 15px;
-        left: auto;
-        transform: none;
+        width: auto;
+        text-align: center;
         font-size: 1.8rem;
-        width: 90%;
     }
 }
 
@@ -281,7 +286,7 @@ body{
         grid-template-columns: 1fr;
         gap: 20px;
 
-        margin-top: 170px;
+        margin-top: 240px;
         padding: 0 10px;
     }
 
